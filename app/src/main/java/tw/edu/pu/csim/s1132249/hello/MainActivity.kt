@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,6 +39,12 @@ fun Play(modifier: Modifier = Modifier) {
         text = "幸運數字(1-100)為 $lucky",
         modifier = modifier
     )
+
+    Button(
+        onClick = { lucky = (1..100).random()}
+    ) {
+            Text("重新生產幸運數字")
+        }
 }
 
 @Preview(showBackground = true)
