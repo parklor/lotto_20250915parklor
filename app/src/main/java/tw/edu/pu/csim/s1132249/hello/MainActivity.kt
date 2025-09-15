@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -34,17 +35,18 @@ class MainActivity : ComponentActivity() {
 fun Play(modifier: Modifier = Modifier) {
     var lucky =(1..100).random()
 
+    Column(modifier = modifier){
+        Text(
+            text = "幸運數字(1-100)為 $lucky",
+        )
 
-    Text(
-        text = "幸運數字(1-100)為 $lucky",
-        modifier = modifier
-    )
-
-    Button(
-        onClick = { lucky = (1..100).random()}
-    ) {
+        Button(
+            onClick = { lucky = (1..100).random()}
+        ) {
             Text("重新生產幸運數字")
         }
+    }
+
 }
 
 @Preview(showBackground = true)
