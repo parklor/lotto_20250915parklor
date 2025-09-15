@@ -37,7 +37,10 @@ class MainActivity : ComponentActivity() {
 fun Play(modifier: Modifier = Modifier) {
     var lucky =(1..100).random()
 
-    Column(modifier = modifier){
+    Column(modifier = modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+      ){
         Text(
             text = "幸運數字(1-100)為 $lucky",
         )
